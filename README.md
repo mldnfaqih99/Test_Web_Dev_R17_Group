@@ -2,6 +2,7 @@
 
 Prepare Tools As Described Below :
 
+- Composer.
 - Database MySQL.
 - Web Server Apache
 
