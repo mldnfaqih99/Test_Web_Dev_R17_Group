@@ -3,6 +3,8 @@
 Prepare Tools As Described Below :
 
 - Composer.
+- PHP 7
+- Laravel 7
 - Database MySQL.
 - Web Server Apache
 
