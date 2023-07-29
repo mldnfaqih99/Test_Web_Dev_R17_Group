@@ -1,0 +1,1 @@
+create database r17_faqih;
