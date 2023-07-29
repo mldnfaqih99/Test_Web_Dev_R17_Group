@@ -10,6 +10,10 @@ use App\TData;
 
 class DataController extends Controller
 {
+    public function __construct(TData $T_data){
+        $this->T_data = $T_data;
+    }
+
     public function index(){
 
         $DataDiri = array(
@@ -81,14 +85,8 @@ class DataController extends Controller
 
     public function getDatatables(){
         
-        $Data = DB::table('t_data')
-        ->select(
-            't_data.id as ID',
-            't_data.nama as Nama',
-            't_data.jabatan as Jabatan',
-            't_data.jenis_kelamin as JenisKelamin',
-            't_data.alamat as Alamat',
-        )->get();
+        $Data = $this->T_data->getDataForDatatable();
+
         return Datatables::of($Data)
         ->addColumn('modify', '
             <a data-placement="top" data-id="{{$ID}}" data-bs-toggle="modal" data-bs-target="#ModalEdit" type="button" class="EditData btn btn-primary btn-sm text-white" title="Edit" >Edit</a>
